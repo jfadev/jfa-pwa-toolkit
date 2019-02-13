@@ -112,7 +112,7 @@ const PWA_CONFIG = {
             },
             stalewhilerevalidate: {
                 active: true,
-                regex: /\/noticias\/.*/,
+                regex: /\/news\/.*/,
             },
             networkfirst: {
                 active: true,
