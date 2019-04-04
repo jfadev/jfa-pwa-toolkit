@@ -1,5 +1,6 @@
 # jfa-pwa-toolkit
-Build lightning fast Progressive Web Apps for any website with only simple configs.
+Add Progressive Web Apps (PWA) Features to Any website very Easy and Fast ⚡️
+You will only need a few simple configs.
 
 Note: This project is **Beta**
 
