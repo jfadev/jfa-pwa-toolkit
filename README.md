@@ -250,8 +250,8 @@ const PWA_CONFIG = {
 }
 ```
 
-## Lib Documentation
-Check the comments in [pwa.js](https://github.com/jfadev/jfa-pwa-toolkit/blob/master/pwa/pwa.js)
+## Documentation
+* [API Reference](https://github.com/jfadev/jfa-pwa-toolkit/blob/master/docs/API.md)
 
 
 ## License
