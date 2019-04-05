@@ -28,9 +28,7 @@
 
 <dl>
 <dt><a href="#PWA">PWA</a></dt>
-<dd><p>JFA PWA Toolkit
-<a href="https://github.com/jfadev/jfa-pwa-toolkit">https://github.com/jfadev/jfa-pwa-toolkit</a>
-license that can be found in the LICENSE file.</p>
+<dd><p>Global const.</p>
 </dd>
 </dl>
 
@@ -381,9 +379,6 @@ Covert urlBase64 To Uint8Array
 <a name="PWA"></a>
 
 ## PWA
-JFA PWA Toolkit
-https://github.com/jfadev/jfa-pwa-toolkit
-license that can be found in the LICENSE file.
 
 **Kind**: global constant  
 **Version**: 0.1  
