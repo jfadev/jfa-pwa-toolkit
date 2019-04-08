@@ -266,7 +266,7 @@ You may need more features, for this we will use the classes and methods offered
 ```
 ```javascript
 document
-	.getElementById('btn-subscription')
+    .getElementById('btn-subscription')
     .addEventListener('click', () => {
     	if (
             PWA.Notification.isDefault() ||
@@ -294,7 +294,7 @@ document
 ```
 ```javascript
 document
-	.getElementById('toggle-subscription')
+    .getElementById('toggle-subscription')
     .addEventListener('change', () => {
     	if (
             PWA.Notification.isDefault() ||
@@ -356,7 +356,7 @@ if (PWA.Notification.isDenied()) {
 #### Displays a pop-up requesting permission to allow Notifications
 ```javascript
 PWA.Notification.requestPermission((status) => {
-	console.log('Notification permission status:', status);
+    console.log('Notification permission status:', status);
 });
 ```
 
@@ -368,12 +368,12 @@ var permission = PWA.Notification.getPermission();
 #### Show Notification sent by the browser
 ```javascript
 const options = {
-	body: 'Extra content to display within the notification',
-	icon: '../images/touch/chrome-touch-icon-192x192.png'
+    body: 'Extra content to display within the notification',
+    icon: '../images/touch/chrome-touch-icon-192x192.png'
 };
 
 PWA.Notification.show('Notification Title', options, sent => {
-	if (sent) {
+    if (sent) {
     	console.log('The Notification has been sent');
     }
 });
@@ -387,9 +387,9 @@ PWA.ServiceWorker.register();
 #### Get the Registration object of the service worker
 ```javascript
 PWA.ServiceWorker.getRegistration((registration) => {
-	if (registration) {
+    if (registration) {
     	console.log(registration);
-	} else {
+    } else {
        console.log('The Service Worker is not registered!');
     }
 });
