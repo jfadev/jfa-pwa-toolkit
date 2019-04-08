@@ -250,6 +250,183 @@ const PWA_CONFIG = {
 }
 ```
 
+At this point your PWA is able to precache static resources, cache the different resources for offline access, icons, splash screen and add to home screen.
+
+
+You may need more features, for this we will use the classes and methods offered by the global variable PWA that will allow us to do things like subscription to push notifications among other things.
+
+
+## Code Examples
+
+#### Button to subscribe to Push Notifications
+```html
+<button type="button" id="btn-subscription">
+	Subscribe to recive Push Notifications
+</button>
+```
+```javascript
+document
+	.getElementById('btn-subscription')
+    .addEventListener('click', () => {
+    	if (
+            PWA.Notification.isDefault() ||
+            PWA.Notification.isGranted()
+        ) {
+            PWA.Push.getSubscription((subscription) => {
+                if (subscription) {
+                    console.log('You are now subscribed to receive Push Notifications!');
+                } else {
+                    PWA.Push.subscribe((r) => {
+                        console.log('Congratulations! You are subscribed to receive Push Notifications!');
+                    });
+                }
+            });
+        } else {
+            console.log("You've turned off Push Notifications. Allow Push Notifications in your browser settings.");
+        }	
+    })
+;
+```
+
+#### Checkbox toggle to subscribe/unsubscribe to Push Notifications
+```html
+<input type="checkbox" id="toggle-subscription"> Push Notifications
+```
+```javascript
+document
+	.getElementById('toggle-subscription')
+    .addEventListener('change', () => {
+    	if (
+            PWA.Notification.isDefault() ||
+            PWA.Notification.isGranted()
+        ) {
+            PWA.Push.getSubscription((subscription) => {
+                if (subscription) {
+                    PWA.Push.unsubscribe((r) => {
+                        console.log('You have been unsubscribed to receive Push Notifications!');
+                    });
+                } else {
+                    PWA.Push.subscribe((r) => {
+                        console.log('You are now subscribed to receive Push Notifications!');
+                    });
+                }
+            });
+        } else {
+            console.log("You've turned off Push Notifications. Allow Push Notifications in your browser settings.");
+        }	
+    })
+;
+```
+
+#### Check the Notifications permissions
+
+###### Default status 
+```javascript
+if (PWA.Notification.isDefault()) {
+    console.log('Permission for Notifications are with default status.');
+} else {
+    console.log('Permission for Notifications are not with default status.');
+}
+```
+###### Granted status 
+```javascript
+if (PWA.Notification.isGranted()) {
+    console.log('Permission for Notifications was granted!');
+} else {
+    console.log('Permission for Notifications was not granted!');
+}
+```
+###### Blocked status
+```javascript
+if (PWA.Notification.isBlocked()) {
+    console.log('Permission for Notifications was blocked.');
+} else {
+    console.log('Permission for Notifications was not blocked.');
+}
+```
+###### Denied status
+```javascript
+if (PWA.Notification.isDenied()) {
+    console.log('Permission for Notifications was denied.');
+} else {
+    console.log('Permission for Notifications was not denied.');
+}
+```
+
+#### Displays a pop-up requesting permission to allow Notifications
+```javascript
+PWA.Notification.requestPermission((status) => {
+	console.log('Notification permission status:', status);
+});
+```
+
+#### Get the Notifications permission status
+```javascript
+var permission = PWA.Notification.getPermission();
+```
+
+#### Show Notification sent by the browser
+```javascript
+const options = {
+	body: 'Extra content to display within the notification',
+	icon: '../images/touch/chrome-touch-icon-192x192.png'
+};
+
+PWA.Notification.show('Notification Title', options, sent => {
+	if (sent) {
+    	console.log('The Notification has been sent');
+    }
+});
+```
+
+#### Register the main service worker
+```javascript
+PWA.ServiceWorker.register();
+```
+
+#### Get the Registration object of the service worker
+```javascript
+PWA.ServiceWorker.getRegistration((registration) => {
+	if (registration) {
+    	console.log(registration);
+	} else {
+       console.log('The Service Worker is not registered!');
+    }
+});
+```
+
+#### Check if the browser support Service Workers
+```javascript
+if (PWA.Navigator.isSupportedServiceWorker()) {
+    console.log('This browser support Service Workers!');
+} else {
+    console.log('This browser does not support Service Workers.');
+}
+```
+
+#### Check if the browser support Notifications
+```javascript
+if (PWA.Navigator.isSupportedNotification()) {
+    console.log('This browser support Notifications!');
+} else {
+    console.log('This browser does not support Notifications.');
+}
+```
+
+#### Check if the browser is offline
+```javascript
+if (PWA.Navigator.isOffline()) {
+    console.log('No Internet connection!');
+} else {
+    console.log('You have an Internet connection!');
+}
+```
+
+#### Clear the browser app cache
+```javascript
+PWA.Navigator.clearCache();
+```
+
 ## Documentation
 * [API Reference](https://github.com/jfadev/jfa-pwa-toolkit/blob/master/docs/API.md)
 
