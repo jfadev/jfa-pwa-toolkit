@@ -431,5 +431,9 @@ PWA.Navigator.clearCache();
 * [API Reference](https://github.com/jfadev/jfa-pwa-toolkit/blob/master/docs/API.md)
 
 
+## Playground
+* [JSFiddle](https://jsfiddle.net/jfadev/5hsj1pgL/83/)
+
+
 ## License
 JFA PWA Toolkit is MIT licensed, as found in the [LICENSE](LICENSE) file.
