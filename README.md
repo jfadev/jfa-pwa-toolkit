@@ -5,6 +5,8 @@ You will only need a few simple configs.
 
 Note: This project is **Beta**
 
+**Start Fast** [Check this!](https://jordifernandes.com/jfa-pwa-toolkit/)
+
 ## Features
 * Web App Manifest
 * Icons Structure Files
