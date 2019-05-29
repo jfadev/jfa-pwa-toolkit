@@ -23,7 +23,7 @@ Note: This project is **Beta**
 
 ## Getting Started
 
-Clone the repostory
+Clone the repository
 ```console
 $ git clone https://github.com/jfadev/jfa-pwa-toolkit.git
 ```
