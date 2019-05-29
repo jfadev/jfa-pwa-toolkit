@@ -23,6 +23,10 @@ Note: This project is **Beta**
 
 ## Getting Started
 
+Clone the repostory
+```console
+$ git clone https://github.com/jfadev/jfa-pwa-toolkit.git
+```
 Create the app icons manually or with the tool [PWA Image Generator](https://www.pwabuilder.com/imageGenerator) and replace files in `/pwa/icons/`.
 
 If you have moved the `pwa` folder somewhere else in your project, edit the `PWA_ROOT` variable in your `/sw.js` file. It is important that the file `sw.js` is in the root of your site.
