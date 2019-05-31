@@ -19,7 +19,7 @@ Note: This project is **Beta**
 
 ## Requirements
 * [Workbox](https://github.com/GoogleChrome/workbox)
-
+This package uses Workbox internally but you do not need to import it.
 
 ## Getting Started
 
