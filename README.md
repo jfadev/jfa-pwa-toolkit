@@ -93,7 +93,8 @@ Edit the template of your project to include the metatags and scripts needed as 
 </html>
 ```
 
-Edit the manifest file `/pwa/manifest.json`. You can `manifest.json` to `app.webmanifest` if you prefer [Reccomended by W3C](https://w3c.github.io/manifest/#media-type-registration).
+Edit the manifest file `/pwa/manifest.json`. 
+You can `manifest.json` to `app.webmanifest` if you prefer [Reccomended by W3C](https://w3c.github.io/manifest/#media-type-registration).
 **Attention** with the paths of icons if you decided to move the `pwa` folder
 ```json
 {
