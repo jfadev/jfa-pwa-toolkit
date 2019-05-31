@@ -5,7 +5,7 @@ You will only need a few simple configs.
 
 Note: This project is **Beta**
 
-**Starting with an Example** [Check this!](https://jordifernandes.com/jfa-pwa-toolkit/)
+**Starting with an Example**  🇪🇸 🇫🇷 🇧🇷 [Check this!](https://jordifernandes.com/jfa-pwa-toolkit/)
 
 ## Features
 * Web App Manifest
