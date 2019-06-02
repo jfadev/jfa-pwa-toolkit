@@ -110,28 +110,37 @@ const PWA_CONFIG = {
                 // Matching routes with a Regular Expression
                 regex: /\/(?:login|logout)\//,
             },
+            // Resources are requested from both the cache and the network in parallel.
+            // The strategy will respond with the cached version if available,
+            // otherwise wait for the network response.
+            // The cache is updated with the network response with each successful request.
             stalewhilerevalidate: {
                 active: true,
                 regex: /\/news\/.*/,
             },
+            // Network first request strategy.
             networkfirst: {
                 active: true,
                 regex: /.*/,
             },
+            // Cache first request strategy.
             cachefirst: {
                 active: false,
                 // regex: /.*/,
                 // maxentries: 500,
                 // maxageseconds: 365 * 24 * 60 * 60,
             },
+            // Force the response to come from the browser.
             cacheonly: {
                 active: false,
                 // regex: /.*/,
             },
         },
+        // Add your custom service worker for load it.
         custom: {
             active: false,
-            script: '',
+            // service worker script route
+            // script: '/pwa/sw/my-custom-sw.js',
         },
     },
 
