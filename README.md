@@ -5,18 +5,16 @@ You will only need a few simple configs.
 
 Note: This project is **Beta**
 
-## Starting with an Example
-* 🇬🇧 [Example in English](https://jordifernandes.com/jfa-pwa-toolkit/)
-* 🇪🇸 [Ejemplo en Español](https://jordifernandes.com/es/jfa-pwa-toolkit/)
-* 🇫🇷 [Exemple en Français](https://jordifernandes.com/fr/jfa-pwa-toolkit/)
-* 🇧🇷 [Exemplo em Português](https://jordifernandes.com/pt/jfa-pwa-toolkit/)
-
 ## Features
 * Web App Manifest
 * Icons Structure Files
 * Precaching
-* Caching Strategies
+* Caching Strateies
 * Push Notifications
+
+## Demo
+* [Demo Online](https://pwa-toolkit-demo.jordifernandes.com)
+* [Demo Repository](https://github.com/jfadev/jfa-pwa-toolkit-demo)
 
 <!-- ## Examples
 [See our demo here](demo-app/src/example/Example.react.js) -->
@@ -25,6 +23,12 @@ Note: This project is **Beta**
 * [Workbox](https://github.com/GoogleChrome/workbox)
 
 This package uses Workbox internally but you do not need to import it.
+
+## Starting with an Example
+* 🇬🇧 [Example in English](https://jordifernandes.com/jfa-pwa-toolkit/)
+* 🇪🇸 [Ejemplo en Español](https://jordifernandes.com/es/jfa-pwa-toolkit/)
+* 🇫🇷 [Exemple en Français](https://jordifernandes.com/fr/jfa-pwa-toolkit/)
+* 🇧🇷 [Exemplo em Português](https://jordifernandes.com/pt/jfa-pwa-toolkit/)
 
 ## Getting Started
 
