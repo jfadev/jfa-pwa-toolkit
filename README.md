@@ -13,7 +13,7 @@ Note: This project is **Beta**
 * Push Notifications
 
 ## Demo
-* [Demo Online](https://pwa-toolkit-demo.jordifernandes.com)
+* [Live Demo](https://pwa-toolkit-demo.jordifernandes.com)
 * [Demo Repository](https://github.com/jfadev/jfa-pwa-toolkit-demo)
 
 <!-- ## Examples
