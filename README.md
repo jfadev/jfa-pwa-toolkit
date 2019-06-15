@@ -286,7 +286,7 @@ You may need more features, for this we will use the classes and methods offered
 #### Button to subscribe to Push Notifications
 ```html
 <button type="button" id="btn-subscription">
-	Subscribe to recive Push Notifications
+    Subscribe to recive Push Notifications
 </button>
 ```
 ```javascript
