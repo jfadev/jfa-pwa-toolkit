@@ -34,7 +34,7 @@ This package uses Workbox internally but you do not need to import it.
 
 Clone the repository
 ```console
-$ git clone https://github.com/jfadev/jfa-pwa-toolkit.git
+$ git clone git@github.com:jfadev/jfa-pwa-toolkit.git
 ```
 Create the app icons manually or with the tool [PWA Image Generator](https://www.pwabuilder.com/imageGenerator) and replace files in `/pwa/icons/`.
 
