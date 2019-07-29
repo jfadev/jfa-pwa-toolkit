@@ -9,7 +9,7 @@ Note: This project is **Beta**
 * Web App Manifest
 * Icons Structure Files
 * Precaching
-* Caching Strateies
+* Caching Strategies
 * Push Notifications
 
 ## Demo
