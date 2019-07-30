@@ -8,6 +8,7 @@ Note: This project is **Beta**
 ## Features
 * Web App Manifest
 * Icons Structure Files
+* Add to Home Screen (A2HS)
 * Offline Work Mode
 * Precaching
 * Caching Strategies
