@@ -8,6 +8,7 @@ Note: This project is **Beta**
 ## Features
 * Web App Manifest
 * Icons Structure Files
+* Offline Work Mode
 * Precaching
 * Caching Strategies
 * Push Notifications
