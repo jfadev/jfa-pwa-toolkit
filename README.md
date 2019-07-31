@@ -1,7 +1,8 @@
 # jfa-pwa-toolkit
 Add Progressive Web Apps (PWA) Features to Any website very Easy and Fast ⚡️
 
-You will only need a few simple configs.
+
+Set a simple configuration file or exploit more features with the easy-to-use library in your js code.
 
 Note: This project is **Beta**
 
