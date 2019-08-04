@@ -2,7 +2,7 @@
   "name": "jfa-pwa-toolkit",
   "description": "⚡ PWA Features to Any Website (very Fast & Easy)",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/pwa.esm.js",
   "directories": {
     "doc": "docs"
   },
