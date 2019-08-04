@@ -8,7 +8,7 @@
  *
  * Global Configs
  */
-const PWA_CONFIG = {
+export default {
 
     // App config
     app: {

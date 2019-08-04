@@ -9,7 +9,9 @@
  * @param {Object} PWA_CONFIG   PWA global configs
  * @param {Object} notification Notification native class.
  */
-const PWA = ((PWA_CONFIG, notification) => {
+// var pwa = ((PWA_CONFIG, notification = Notification) => {
+// const PWA = ((PWA_CONFIG, notification) => {
+export default function (PWA_CONFIG, notification = Notification) {
 
     /**
      * Service Workers
@@ -376,4 +378,8 @@ const PWA = ((PWA_CONFIG, notification) => {
         Helper
     };
 
-}) (PWA_CONFIG, Notification);
+// }) (PWA_CONFIG, Notification);
+}
+// });
+
+// export default pwa;

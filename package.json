@@ -1,0 +1,52 @@
+{
+  "name": "jfa-pwa-toolkit",
+  "description": "⚡ PWA Features to Any Website (very Fast & Easy)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "webpack": "^4.38.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "postinstall": "cp src/template/* $INIT_CWD"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfadev/jfa-pwa-toolkit.git"
+  },
+  "keywords": [
+    "pwa",
+    "manifest",
+    "manifest-json",
+    "offline",
+    "service-worker",
+    "precache",
+    "push-notifications",
+    "javascript",
+    "javascript-library",
+    "toolkit",
+    "progressive-web-app",
+    "progressive-web-apps",
+    "progressive-web-applications",
+    "offline-first",
+    "service-workers",
+    "sw-precache",
+    "sw-toolbox",
+    "web-push",
+    "web-push-notifications",
+    "pwa-toolkit"
+  ],
+  "author": "Jordi Fernandes Alves <jfadev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfadev/jfa-pwa-toolkit/issues"
+  },
+  "homepage": "https://github.com/jfadev/jfa-pwa-toolkit#readme"
+}
