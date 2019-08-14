@@ -10,7 +10,7 @@
 const PWA_ROOT = '/pwa';
 
 // Import configs
-importScripts(PWA_ROOT + '/config.js');
+importScripts('{{config-dir}}pwa.config.js');
 
 // Import Main Service Worker
-importScripts(PWA_ROOT + '/sw.js');
+importScripts('{{sw-dir}}sw.js');

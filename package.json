@@ -2,11 +2,13 @@
   "name": "jfa-pwa-toolkit",
   "description": "⚡ PWA Features to Any Website (very Fast & Easy)",
   "version": "1.0.0",
-  "main": "dist/pwa.esm.js",
+  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "dependencies": {
+    "ncp": "^2.0.0",
+    "prompt": "^1.0.0",
     "webpack": "^4.38.0"
   },
   "devDependencies": {
@@ -15,7 +17,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "postinstall": "cp src/template/* $INIT_CWD"
+    "make": "node src/maker/index.js make",
+    "postinstall": "node src/maker/index.js make"
   },
   "repository": {
     "type": "git",
