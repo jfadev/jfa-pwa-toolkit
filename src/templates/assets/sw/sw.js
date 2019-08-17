@@ -1,14 +1,24 @@
 /**
- * JFA PWA Toolkit
- * https://github.com/jfadev/jfa-pwa-toolkit
- * license that can be found in the LICENSE file.
+ *     _  __      ___
+ *  _ | |/ _|__ _|   \ _____ __
+ * | || |  _/ _` | |) / -_) V /
+ *  \__/|_| \__,_|___/\___|\_/
+ * https://jordifernandes.com
  *
- * @author Jordi Fernandes Alves <jfadev@gmail.com>
- * @version 0.1
+ * sw.js (2019-05-23T15:35:14-03:00)
+ *
+ * @package:   jfa-pwa-toolkit
+ * @author:    Jordi Fernandes Alves <jfadev@gmail.com>
+ * @version:   1.0.0
+ * @license:   MIT License
+ * @link:      https://github.com/jfadev/jfa-pwa-toolkit/
+ * @docs:      https://github.com/jfadev/jfa-pwa-toolkit/blob/master/README.md
  */
 
-// Main Service Worker:
-// --------------------
+
+/**
+ * Main Service Worker
+ */
 
 // Import Workbox lib (https://developers.google.com/web/tools/workbox/)
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
@@ -22,47 +32,47 @@ if (workbox) {
 
     // Import PreCache Service Worker
     if (PWA_CONFIG.precache.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'precache-sw.js');
+        importScripts(SW_DIR + '/precache-sw.js');
     }
 
     // Import Cache Images Service Worker
     if (PWA_CONFIG.cache.images.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-images-sw.js');
+        importScripts(SW_DIR + '/cache-images-sw.js');
     }
 
     // Import Cache Statics (js, css, json) Service Worker
     if (PWA_CONFIG.cache.statics.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-statics-sw.js');
+        importScripts(SW_DIR + '/cache-statics-sw.js');
     }
 
     // Import Cache Fonts Service Worker
     if (PWA_CONFIG.cache.fonts.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-fonts-sw.js');
+        importScripts(SW_DIR + '/cache-fonts-sw.js');
     }
 
     // Import Cache Routes Network Only Service Worker
     if (PWA_CONFIG.cache.routes.networkonly.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-routes-networkonly-sw.js');
+        importScripts(SW_DIR + '/cache-routes-networkonly-sw.js');
     }
 
     // Import Cache Routes Stale While Revalidate Service Worker
     if (PWA_CONFIG.cache.routes.stalewhilerevalidate.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-routes-stalewhilerevalidate-sw.js');
+        importScripts(SW_DIR + '/cache-routes-stalewhilerevalidate-sw.js');
     }
 
     // Import Cache Routes Network First Service Worker
     if (PWA_CONFIG.cache.routes.networkfirst.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-routes-networkfirst-sw.js');
+        importScripts(SW_DIR + '/cache-routes-networkfirst-sw.js');
     }
 
     // Import Cache Routes Cache First Service Worker
     if (PWA_CONFIG.cache.routes.cachefirst.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-routes-cachefirst-sw.js');
+        importScripts(SW_DIR + '/cache-routes-cachefirst-sw.js');
     }
 
     // Import Cache Routes Cache Only Service Worker
     if (PWA_CONFIG.cache.routes.cacheonly.active) {
-        importScripts(/*PWA_ROOT + '/sw/*/'cache-routes-cacheonly-sw.js');
+        importScripts(SW_DIR + '/cache-routes-cacheonly-sw.js');
     }
 
     // Import Cache Custom Script Service Worker
@@ -76,10 +86,10 @@ if (workbox) {
 
 // Import Push Service Worker
 if (PWA_CONFIG.push.active) {
-    importScripts(/*PWA_ROOT + '/sw/*/'push-sw.js');
+    importScripts(SW_DIR + '/push-sw.js');
 }
 
 // Import Notificationclick Service Worker
 if (PWA_CONFIG.push.notification.notificationclick.active) {
-    importScripts(/*PWA_ROOT + '/sw/*/'notificationclick-sw.js');
+    importScripts(SW_DIR + '/notificationclick-sw.js');
 }

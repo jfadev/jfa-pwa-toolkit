@@ -1,20 +1,28 @@
 /**
- * JFA PWA Toolkit
- * https://github.com/jfadev/jfa-pwa-toolkit
- * license that can be found in the LICENSE file.
+ *     _  __      ___
+ *  _ | |/ _|__ _|   \ _____ __
+ * | || |  _/ _` | |) / -_) V /
+ *  \__/|_| \__,_|___/\___|\_/
+ * https://jordifernandes.com
  *
- * @author Jordi Fernandes Alves <jfadev@gmail.com>
- * @version 0.1
+ * precache-sw.js (2019-05-23T15:35:14-03:00)
+ *
+ * @package:   jfa-pwa-toolkit
+ * @author:    Jordi Fernandes Alves <jfadev@gmail.com>
+ * @version:   1.0.0
+ * @license:   MIT License
+ * @link:      https://github.com/jfadev/jfa-pwa-toolkit/
+ * @docs:      https://github.com/jfadev/jfa-pwa-toolkit/blob/master/README.md
  */
 
-// Assets Precache:
-// ------------------
 
+/* Default assets */
 const assets = [
     PWA_CONFIG.sw.offline_route,
-    PWA_ROOT + '/manifest.json',
-    PWA_ROOT + '/pwa.js',
-    '/sw.js',
+    CONFIG_DIR + 'pwa.config.js',
+    MANIFEST_DIR + 'manifest.json',
+    ROOT_DIR + 'sw.js',
 ];
 
+/* Precache assets */
 workbox.precaching.precacheAndRoute(assets.concat(PWA_CONFIG.precache.routes));

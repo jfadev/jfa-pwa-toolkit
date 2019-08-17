@@ -1,3 +1,21 @@
+/**
+ *     _  __      ___
+ *  _ | |/ _|__ _|   \ _____ __
+ * | || |  _/ _` | |) / -_) V /
+ *  \__/|_| \__,_|___/\___|\_/
+ * https://jordifernandes.com
+ *
+ * index.js (2019-05-23T15:35:14-03:00)
+ *
+ * @package:   jfa-pwa-toolkit
+ * @author:    Jordi Fernandes Alves <jfadev@gmail.com>
+ * @version:   1.0.0
+ * @license:   MIT License
+ * @link:      https://github.com/jfadev/jfa-pwa-toolkit/
+ * @docs:      https://github.com/jfadev/jfa-pwa-toolkit/blob/master/README.md
+ */
+
+
 const fs = require('fs');
 const ncp = require('ncp').ncp;
 const prompt = require('prompt');
@@ -13,7 +31,7 @@ prompt.delimiter = colors.grey(" > ");
 const schema = {
     properties: {
         'app-name': {
-            description: colors.cyan("What's your App name? (ex: 'PWA Toolkit')"),
+            description: colors.cyan("What's your App name? (ex: 'PWA Toolkit Demo')"),
             required: true
         },
         'app-version': {
@@ -21,23 +39,23 @@ const schema = {
             required: true
         },
         'root-dir': {
-            description: colors.cyan("What's a root directory of your App? (default: '/')"),
+            description: colors.cyan("What's a root directory of your App? (ex: '/')"),
             required: true
         },
         'config-dir': {
-            description: colors.cyan("In which directory to generate the 'pwa.config.js' file? (default: '/')"),
+            description: colors.cyan("In which directory to generate the 'pwa.config.js' file? (ex: '/')"),
             required: true
         },
         'manifest-dir': {
-            description: colors.cyan("In which directory to generate the 'manifest.json' file? (default: '/')"),
+            description: colors.cyan("In which directory to generate the 'manifest.json' file? (ex: '/')"),
             required: true
         },
         'icons-dir': {
-            description: colors.cyan("In which directory to generate the icons? (default: '/assets/icons/')"),
+            description: colors.cyan("In which directory to generate the icons? (ex: '/assets/icons/')"),
             required: true
         },
         'sw-dir': {
-            description: colors.cyan("In which directory to generate the service workers? (default: '/assets/sw/')"),
+            description: colors.cyan("In which directory to generate the service workers? (ex: '/assets/sw/')"),
             required: true
         },
     }
@@ -125,6 +143,7 @@ const generateFile = (templatePath, outputPath, filename, fields) => {
     });
 };
 
+
 const copyFolder = (fromPath, toPath) => {
     ncp(fromPath, '.' + toPath, err => {
         if (err) {
@@ -134,6 +153,10 @@ const copyFolder = (fromPath, toPath) => {
     });
 };
 
+/**
+ * Copy directory
+ * @param  {string} dirPath Path of a directory to copy
+ */
 const makeDir = (dirPath) => {
     if (dirPath !== '/') {
         fs.mkdir('.' + dirPath, {

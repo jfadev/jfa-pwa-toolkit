@@ -1,13 +1,22 @@
 /**
- * JFA PWA Toolkit
- * https://github.com/jfadev/jfa-pwa-toolkit
- * license that can be found in the LICENSE file.
+ *     _  __      ___
+ *  _ | |/ _|__ _|   \ _____ __
+ * | || |  _/ _` | |) / -_) V /
+ *  \__/|_| \__,_|___/\___|\_/
+ * https://jordifernandes.com
  *
- * @author Jordi Fernandes Alves <jfadev@gmail.com>
- * @version 0.1
+ * cache-statics-sw.js (2019-05-23T15:35:14-03:00)
+ *
+ * @package:   jfa-pwa-toolkit
+ * @author:    Jordi Fernandes Alves <jfadev@gmail.com>
+ * @version:   1.0.0
+ * @license:   MIT License
+ * @link:      https://github.com/jfadev/jfa-pwa-toolkit/
+ * @docs:      https://github.com/jfadev/jfa-pwa-toolkit/blob/master/README.md
  */
 
-// Cache JS, JSON and CSS (request if it is available and update the cache in the background)
+
+/* Cache JS, JSON and CSS (request if it is available and update the cache in the background) */
 workbox.routing.registerRoute(
     /\.(?:js|json|css)$/,
     workbox.strategies.staleWhileRevalidate({

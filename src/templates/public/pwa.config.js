@@ -3,8 +3,6 @@
  *  _ | |/ _|__ _|   \ _____ __
  * | || |  _/ _` | |) / -_) V /
  *  \__/|_| \__,_|___/\___|\_/
- *
- * Copyright © 2019 Jordi Fernandes Alves
  * https://jordifernandes.com
  *
  * pwa.config.js (2019-05-23T15:35:14-03:00)

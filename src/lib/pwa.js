@@ -1,16 +1,27 @@
 /**
- * JFA PWA Toolkit
- * https://github.com/jfadev/jfa-pwa-toolkit
- * license that can be found in the LICENSE file.
+ *     _  __      ___
+ *  _ | |/ _|__ _|   \ _____ __
+ * | || |  _/ _` | |) / -_) V /
+ *  \__/|_| \__,_|___/\___|\_/
+ * https://jordifernandes.com
  *
- * @author Jordi Fernandes Alves <jfadev@gmail.com>
- * @version 0.1
+ * pwa.js (2019-05-23T15:35:14-03:00)
+ *
+ * @package:   jfa-pwa-toolkit
+ * @author:    Jordi Fernandes Alves <jfadev@gmail.com>
+ * @version:   1.0.0
+ * @license:   MIT License
+ * @link:      https://github.com/jfadev/jfa-pwa-toolkit/
+ * @docs:      https://github.com/jfadev/jfa-pwa-toolkit/blob/master/README.md
+ */
+
+
+/**
+ * Toolkit Library
  *
  * @param {Object} PWA_CONFIG   PWA global configs
  * @param {Object} notification Notification native class.
  */
-// var pwa = ((PWA_CONFIG, notification = Notification) => {
-// const PWA = ((PWA_CONFIG, notification) => {
 export default function (PWA_CONFIG, notification = Notification) {
 
     /**
@@ -377,9 +388,4 @@ export default function (PWA_CONFIG, notification = Notification) {
         Server,
         Helper
     };
-
-// }) (PWA_CONFIG, Notification);
 }
-// });
-
-// export default pwa;

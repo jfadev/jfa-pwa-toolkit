@@ -1,13 +1,22 @@
 /**
- * JFA PWA Toolkit
- * https://github.com/jfadev/jfa-pwa-toolkit
- * license that can be found in the LICENSE file.
+ *     _  __      ___
+ *  _ | |/ _|__ _|   \ _____ __
+ * | || |  _/ _` | |) / -_) V /
+ *  \__/|_| \__,_|___/\___|\_/
+ * https://jordifernandes.com
  *
- * @author Jordi Fernandes Alves <jfadev@gmail.com>
- * @version 0.1
+ * push-sw.js (2019-05-23T15:35:14-03:00)
+ *
+ * @package:   jfa-pwa-toolkit
+ * @author:    Jordi Fernandes Alves <jfadev@gmail.com>
+ * @version:   1.0.0
+ * @license:   MIT License
+ * @link:      https://github.com/jfadev/jfa-pwa-toolkit/
+ * @docs:      https://github.com/jfadev/jfa-pwa-toolkit/blob/master/README.md
  */
 
-// Listen push events from the server
+
+/* Listen push events from the server */
 self.addEventListener('push', (e) => {
     if (self.Notification && self.Notification.permission === 'granted') {
         if (e.data) {
@@ -17,7 +26,10 @@ self.addEventListener('push', (e) => {
             options.data.clickUrl = data.url;
 
             e.waitUntil(
-                self.registration.showNotification(PWA_CONFIG.push.notification.title, options)
+                self.registration.showNotification(
+                    PWA_CONFIG.push.notification.title,
+                    options
+                )
             );
         }
     }
