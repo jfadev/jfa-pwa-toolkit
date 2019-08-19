@@ -20,6 +20,7 @@ const fs = require('fs');
 const ncp = require('ncp').ncp;
 const prompt = require('prompt');
 const colors = require("colors/safe");
+const babel = require("@babel/core");
 
 console.log(colors.yellow.bold("-----------------------------"));
 console.log(colors.yellow.bold.underline("PWA Tookit Maker (by @jfadev)"));
@@ -82,7 +83,7 @@ prompt.get(schema, (err, result) => {
 
     /* Maker */
     makeDir(CONFIG_DIR);
-    generateFile(CONFIG_TPL, CONFIG_DIR, 'pwa.config.js', [{
+    generateFile(CONFIG_TPL, CONFIG_DIR, 'pwa.config.js', false, [{
             name: 'app-name',
             value: APP_NAME
         },
@@ -97,7 +98,7 @@ prompt.get(schema, (err, result) => {
     ]);
 
     makeDir(MANIFEST_DIR);
-    generateFile(MANIFEST_TPL, MANIFEST_DIR, 'manifest.json', [{
+    generateFile(MANIFEST_TPL, MANIFEST_DIR, 'manifest.json', false, [{
             name: 'app-name',
             value: APP_NAME
         },
@@ -111,13 +112,21 @@ prompt.get(schema, (err, result) => {
         }
     ]);
 
-    generateFile(SW_TPL, ROOT_DIR, 'sw.js', [{
+    generateFile(SW_TPL, ROOT_DIR, 'sw.js', true, [{
+            name: 'root-dir',
+            value: ROOT_DIR
+        },
+        {
             name: 'config-dir',
             value: CONFIG_DIR
         },
         {
             name: 'sw-dir',
             value: SW_DIR
+        },
+        {
+            name: 'manifest-dir',
+            value: MANIFEST_DIR
         }
     ]);
 
@@ -125,14 +134,36 @@ prompt.get(schema, (err, result) => {
     copyFolder(ICONS_ASSETS, ICONS_DIR);
 
     makeDir(SW_DIR);
-    copyFolder(SW_ASSETS, SW_DIR);
+    generateFile(SW_ASSETS + 'cache-fonts-sw.js', SW_DIR, 'cache-fonts-sw.js', true);
+    generateFile(SW_ASSETS + 'cache-images-sw.js', SW_DIR, 'cache-images-sw.js', true);
+    generateFile(SW_ASSETS + 'cache-routes-cachefirst-sw.js', SW_DIR, 'cache-routes-cachefirst-sw.js', true);
+    generateFile(SW_ASSETS + 'cache-routes-cacheonly-sw.js', SW_DIR, 'cache-routes-cacheonly-sw.js', true);
+    generateFile(SW_ASSETS + 'cache-routes-networkfirst-sw.js', SW_DIR, 'cache-routes-networkfirst-sw.js', true);
+    generateFile(SW_ASSETS + 'cache-routes-networkonly-sw.js', SW_DIR, 'cache-routes-networkonly-sw.js', true);
+    generateFile(SW_ASSETS + 'cache-routes-stalewhilerevalidate-sw.js', SW_DIR, 'cache-routes-stalewhilerevalidate-sw.js', true);
+    generateFile(SW_ASSETS + 'cache-statics-sw.js', SW_DIR, 'cache-statics-sw.js', true);
+    generateFile(SW_ASSETS + 'notificationclick-sw.js', SW_DIR, 'notificationclick-sw.js', true);
+    generateFile(SW_ASSETS + 'precache-sw.js', SW_DIR, 'precache-sw.js', true);
+    generateFile(SW_ASSETS + 'push-sw.js', SW_DIR, 'push-sw.js', true);
+    generateFile(SW_ASSETS + 'sw.js', SW_DIR, 'sw.js', true);
 });
 
-const generateFile = (templatePath, outputPath, filename, fields) => {
+const generateFile = (templatePath, outputPath, filename, transform, fields) => {
     var template = fs.readFileSync(templatePath, 'utf8');
-    fields.forEach(field => {
-        template = template.replace(new RegExp(`{{${field.name}}}`, 'gm'), field.value);
-    });
+    if (fields) {
+        fields.forEach(field => {
+            template = template.replace(new RegExp(`{{${field.name}}}`, 'gm'), field.value);
+        });
+    }
+    if (transform) {
+        template = babel.transformSync(template, {
+            presets: [
+                require("@babel/preset-env"),
+                require("babel-preset-minify")
+            ],
+            comments: false
+        }).code;
+    }
     fs.writeFile(`.${outputPath+filename}`, template, err => {
         if (err) {
             console.error(err.message);
@@ -142,7 +173,6 @@ const generateFile = (templatePath, outputPath, filename, fields) => {
         return true;
     });
 };
-
 
 const copyFolder = (fromPath, toPath) => {
     ncp(fromPath, '.' + toPath, err => {
