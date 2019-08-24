@@ -6,6 +6,8 @@ Set a simple configuration file or exploit more features with the easy-to-use li
 
 Note: This project is **Beta**
 
+Attention: THIS DOCUMENTATION IS THE OLDER VERSION!
+
 ## Features
 * Web App Manifest
 * Icons Structure Files
@@ -104,7 +106,7 @@ Edit the template of your project to include the metatags and scripts needed as 
 </html>
 ```
 
-Edit the manifest file `/pwa/manifest.json`. 
+Edit the manifest file `/pwa/manifest.json`.
 You can rename `manifest.json` to `app.webmanifest` if you prefer [Reccomended by W3C](https://w3c.github.io/manifest/#media-type-registration).
 **Attention** with the paths of icons if you decided to move the `pwa` folder
 ```json
@@ -311,7 +313,7 @@ document
             });
         } else {
             console.log("You've turned off Push Notifications. Allow Push Notifications in your browser settings.");
-        }	
+        }
     })
 ;
 ```
@@ -341,14 +343,14 @@ document
             });
         } else {
             console.log("You've turned off Push Notifications. Allow Push Notifications in your browser settings.");
-        }	
+        }
     })
 ;
 ```
 
 #### Check the Notifications permissions
 
-###### Default status 
+###### Default status
 ```javascript
 if (PWA.Notification.isDefault()) {
     console.log('Permission for Notifications are with default status.');
@@ -356,7 +358,7 @@ if (PWA.Notification.isDefault()) {
     console.log('Permission for Notifications are not with default status.');
 }
 ```
-###### Granted status 
+###### Granted status
 ```javascript
 if (PWA.Notification.isGranted()) {
     console.log('Permission for Notifications was granted!');
