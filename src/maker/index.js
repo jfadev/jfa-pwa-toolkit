@@ -75,11 +75,11 @@ prompt.get(schema, (err, result) => {
     const SW_DIR = result['sw-dir'];
 
     /* Templates */
-    const CONFIG_TPL = 'jfa-pwa-toolkit/src/templates/public/pwa.config.js';
-    const MANIFEST_TPL = 'jfa-pwa-toolkit/src/templates/public/manifest.json';
-    const SW_TPL = 'jfa-pwa-toolkit/src/templates/public/sw.js';
-    const ICONS_ASSETS = 'jfa-pwa-toolkit/src/templates/assets/icons/';
-    const SW_ASSETS = 'jfa-pwa-toolkit/src/templates/assets/sw/';
+    const CONFIG_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/public/pwa.config.js';
+    const MANIFEST_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/public/manifest.json';
+    const SW_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/public/sw.js';
+    const ICONS_ASSETS = 'node_modules/jfa-pwa-toolkit/src/templates/assets/icons/';
+    const SW_ASSETS = 'node_modules/jfa-pwa-toolkit/src/templates/assets/sw/';
 
     /* Maker */
     makeDir(CONFIG_DIR);
