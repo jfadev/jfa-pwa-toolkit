@@ -1,7 +1,7 @@
 {
   "name": "jfa-pwa-toolkit",
   "description": "⚡ PWA Features to Any Website (very Fast & Easy)",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "directories": {
     "doc": "docs"

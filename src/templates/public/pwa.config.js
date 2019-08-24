@@ -39,50 +39,6 @@ const PWA_CONFIG = {
         offline_route: '/pwa/errors/offline/',
     },
 
-    /* Push manager config */
-    /***********************/
-    push: {
-        /* Enable/disable push notifications */
-        active: false,
-        /* Push notification server config */
-        server: {
-            /* API public key */
-            public_key: 'YOURAPIPUBLICKEY',
-            /* Subscription API endpoint */
-            endpoint: '/api/push/subscription/',
-        },
-        /* Notification config */
-        notification: {
-            /* Title of notifications from the server */
-            title: '{{app-name}}',
-            /* Options object same that showNotification() options
-             * (https://developer.mozilla.org/es/docs/Web/API/ServiceWorkerRegistration/showNotification) */
-            options: {
-                /* A string representing an extra content to display within the notification */
-                body: '',
-                /* The URL of an image to be used as an icon by the notification */
-                icon: '{{icons-dir}}firefox/firefox-general-64-64.png',
-                /* A vibration pattern to run with the display of the notification.
-                 * A vibration pattern can be an array with as few as one member.
-                 * The values are times in milliseconds where the even indices (0, 2, 4, etc.)
-                 * indicate how long to vibrate and the odd indices indicate how long to pause.
-                 * For example [300, 100, 400] would vibrate 300ms, pause 100ms, then vibrate 400ms. */
-                vibrate: [100, 50, 100],
-                /* Arbitrary data that you want associated with the notification. This can be of any data type */
-                data: {
-                    // dateOfArrival: Date.now(),
-                    // primaryKey: '1',
-                    // clickUrl: '',
-                },
-            },
-            /* Notification click event */
-            notificationclick: {
-                /* Enable/disable notification click event */
-                active: false,
-            }
-        }
-    },
-
     /* Cache config */
     /****************/
     cache: {
@@ -175,5 +131,49 @@ const PWA_CONFIG = {
             // '/assets/example.png',
             // '/assets/example.js',
         ]
+    },
+
+    /* Push manager config */
+    /***********************/
+    push: {
+        /* Enable/disable push notifications */
+        active: false,
+        /* Push notification server config */
+        server: {
+            /* API public key */
+            public_key: 'YOURAPIPUBLICKEY',
+            /* Subscription API endpoint */
+            endpoint: '/api/push/subscription/',
+        },
+        /* Notification config */
+        notification: {
+            /* Title of notifications from the server */
+            title: '{{app-name}}',
+            /* Options object same that showNotification() options
+             * (https://developer.mozilla.org/es/docs/Web/API/ServiceWorkerRegistration/showNotification) */
+            options: {
+                /* A string representing an extra content to display within the notification */
+                body: '',
+                /* The URL of an image to be used as an icon by the notification */
+                icon: '{{icons-dir}}firefox/firefox-general-64-64.png',
+                /* A vibration pattern to run with the display of the notification.
+                 * A vibration pattern can be an array with as few as one member.
+                 * The values are times in milliseconds where the even indices (0, 2, 4, etc.)
+                 * indicate how long to vibrate and the odd indices indicate how long to pause.
+                 * For example [300, 100, 400] would vibrate 300ms, pause 100ms, then vibrate 400ms. */
+                vibrate: [100, 50, 100],
+                /* Arbitrary data that you want associated with the notification. This can be of any data type */
+                data: {
+                    // dateOfArrival: Date.now(),
+                    // primaryKey: '1',
+                    // clickUrl: '',
+                },
+            },
+            /* Notification click event */
+            notificationclick: {
+                /* Enable/disable notification click event */
+                active: false,
+            }
+        }
     }
 };
