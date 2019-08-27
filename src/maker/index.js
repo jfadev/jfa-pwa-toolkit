@@ -22,9 +22,13 @@ const prompt = require('prompt');
 const colors = require("colors/safe");
 const babel = require("@babel/core");
 
-console.log(colors.yellow.bold("-----------------------------"));
-console.log(colors.yellow.bold.underline("PWA Tookit Maker (by @jfadev)"));
-console.log(colors.yellow.bold("-----------------------------"));
+console.log(colors.yellow.bold(" ______  ________ _______  "));
+console.log(colors.yellow.bold("|   __ \\|   |  | |   _   |"));
+console.log(colors.yellow.bold("|    __/|   |  | |       |"));
+console.log(colors.yellow.bold("|___|   |________|___|___|"));
+console.log(colors.yellow.bold("--------------------------"));
+console.log(colors.yellow.bold.underline(" PWA Tookit Maker @jfadev"));
+console.log(colors.yellow.bold("--------------------------"));
 
 prompt.message = colors.green("input");
 prompt.delimiter = colors.grey(" > ");
@@ -32,7 +36,7 @@ prompt.delimiter = colors.grey(" > ");
 const schema = {
     properties: {
         'app-name': {
-            description: colors.cyan("What's your App name? (ex: 'PWA Toolkit Demo')"),
+            description: colors.cyan("What's your App name? (ex: 'PWA Demo')"),
             required: true
         },
         'app-version': {
@@ -68,6 +72,7 @@ prompt.get(schema, (err, result) => {
     const APP_NAME = result['app-name'];
     const APP_VERSION = result['app-version'];
 
+    /* Directories */
     const ROOT_DIR = result['root-dir'];
     const CONFIG_DIR = result['config-dir'];
     const MANIFEST_DIR = result['manifest-dir'];
@@ -189,11 +194,13 @@ const copyFolder = (fromPath, toPath) => {
  */
 const makeDir = (dirPath) => {
     if (dirPath !== '/') {
-        fs.mkdir('.' + dirPath, {
-            recursive: true
-        }, (err) => {
-            return console.error(err);
-        });
-        console.log(colors.bgGreen(`'${dirPath}' created!`));
+        if (!fs.existsSync('.' + dirPath)) {
+            fs.mkdir('.' + dirPath, {
+                recursive: true
+            }, (err) => {
+                return console.error(err);
+            });
+            console.log(colors.bgGreen(`'${dirPath}' created!`));
+        }
     }
 };

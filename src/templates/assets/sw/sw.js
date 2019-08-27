@@ -32,47 +32,47 @@ if (workbox) {
 
     // Import PreCache Service Worker
     if (PWA_CONFIG.precache.active) {
-        importScripts(SW_DIR + '/precache-sw.js');
+        importScripts(SW_DIR + 'precache-sw.js');
     }
 
     // Import Cache Images Service Worker
     if (PWA_CONFIG.cache.images.active) {
-        importScripts(SW_DIR + '/cache-images-sw.js');
+        importScripts(SW_DIR + 'cache-images-sw.js');
     }
 
     // Import Cache Statics (js, css, json) Service Worker
     if (PWA_CONFIG.cache.statics.active) {
-        importScripts(SW_DIR + '/cache-statics-sw.js');
+        importScripts(SW_DIR + 'cache-statics-sw.js');
     }
 
     // Import Cache Fonts Service Worker
     if (PWA_CONFIG.cache.fonts.active) {
-        importScripts(SW_DIR + '/cache-fonts-sw.js');
+        importScripts(SW_DIR + 'cache-fonts-sw.js');
     }
 
     // Import Cache Routes Network Only Service Worker
     if (PWA_CONFIG.cache.routes.networkonly.active) {
-        importScripts(SW_DIR + '/cache-routes-networkonly-sw.js');
+        importScripts(SW_DIR + 'cache-routes-networkonly-sw.js');
     }
 
     // Import Cache Routes Stale While Revalidate Service Worker
     if (PWA_CONFIG.cache.routes.stalewhilerevalidate.active) {
-        importScripts(SW_DIR + '/cache-routes-stalewhilerevalidate-sw.js');
+        importScripts(SW_DIR + 'cache-routes-stalewhilerevalidate-sw.js');
     }
 
     // Import Cache Routes Network First Service Worker
     if (PWA_CONFIG.cache.routes.networkfirst.active) {
-        importScripts(SW_DIR + '/cache-routes-networkfirst-sw.js');
+        importScripts(SW_DIR + 'cache-routes-networkfirst-sw.js');
     }
 
     // Import Cache Routes Cache First Service Worker
     if (PWA_CONFIG.cache.routes.cachefirst.active) {
-        importScripts(SW_DIR + '/cache-routes-cachefirst-sw.js');
+        importScripts(SW_DIR + 'cache-routes-cachefirst-sw.js');
     }
 
     // Import Cache Routes Cache Only Service Worker
     if (PWA_CONFIG.cache.routes.cacheonly.active) {
-        importScripts(SW_DIR + '/cache-routes-cacheonly-sw.js');
+        importScripts(SW_DIR + 'cache-routes-cacheonly-sw.js');
     }
 
     // Import Cache Custom Script Service Worker
@@ -86,10 +86,10 @@ if (workbox) {
 
 // Import Push Service Worker
 if (PWA_CONFIG.push.active) {
-    importScripts(SW_DIR + '/push-sw.js');
+    importScripts(SW_DIR + 'push-sw.js');
 }
 
 // Import Notificationclick Service Worker
 if (PWA_CONFIG.push.notification.notificationclick.active) {
-    importScripts(SW_DIR + '/notificationclick-sw.js');
+    importScripts(SW_DIR + 'notificationclick-sw.js');
 }

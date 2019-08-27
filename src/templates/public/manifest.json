@@ -1,7 +1,7 @@
 {
     "dir": "ltr",
     "lang": "en-us",
-    "name": "{{app-name}}",
+    "name": "{{app-name}} {{app-version}}",
     "scope": "/",
     "display": "standalone",
     "start_url": "/",

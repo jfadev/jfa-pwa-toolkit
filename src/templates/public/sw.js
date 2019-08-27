@@ -22,7 +22,7 @@ const CONFIG_DIR = '{{config-dir}}';
 const MANIFEST_DIR = '{{manifest-dir}}';
 
 // Import configs
-importScripts('{{config-dir}}pwa.config.js');
+importScripts(CONFIG_DIR + 'pwa.config.js');
 
 // Import Main Service Worker
-importScripts('{{sw-dir}}sw.js');
+importScripts(SW_DIR + 'sw.js');
