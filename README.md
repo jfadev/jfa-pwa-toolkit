@@ -6,6 +6,41 @@ Set a simple configuration file or exploit more features with the easy-to-use li
 
 Note: This project is **Beta**
 
+## Install
+
+### NPM
+
+```console
+$ npm i jfa-pwa-toolkit
+```
+or
+```console
+$ yarn add jfa-pwa-toolkit
+```
+
+
+### CDN
+https://unpkg.com/jfa-pwa-toolkit@0.0.3/dist/pwa.js
+
+## Maker
+
+### Usage
+
+```console
+$ node node_modules/jfa-pwa-toolkit/src/maker
+```
+
+## Library
+
+### Usage
+
+#### ES6
+
+```js
+import PWA from 'jfa-pwa-toolkit';
+```
+
+
 ## Features
 * Web App Manifest
 * Icons Structure Files
