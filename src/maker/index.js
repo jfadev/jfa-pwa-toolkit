@@ -59,10 +59,10 @@ const schema = {
             description: colors.cyan("In which directory to generate the icons? (ex: '/assets/icons/')"),
             required: true
         },
-        'sw-dir': {
-            description: colors.cyan("In which directory to generate the service workers? (ex: '/assets/sw/')"),
-            required: true
-        },
+        // 'sw-dir': {
+        //     description: colors.cyan("In which directory to generate the service workers? (ex: '/assets/sw/')"),
+        //     required: true
+        // },
     }
 };
 
@@ -77,14 +77,14 @@ prompt.get(schema, (err, result) => {
     const CONFIG_DIR = result['config-dir'];
     const MANIFEST_DIR = result['manifest-dir'];
     const ICONS_DIR = result['icons-dir'];
-    const SW_DIR = result['sw-dir'];
+    const SW_DIR = 'node_modules/jfa-pwa-toolkit/dist/sw/';//result['sw-dir'];
 
     /* Templates */
-    const CONFIG_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/public/pwa.config.js';
-    const MANIFEST_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/public/manifest.json';
-    const SW_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/public/sw.js';
-    const ICONS_ASSETS = 'node_modules/jfa-pwa-toolkit/src/templates/assets/icons/';
-    const SW_ASSETS = 'node_modules/jfa-pwa-toolkit/src/templates/assets/sw/';
+    const CONFIG_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/pwa.config.js';
+    const MANIFEST_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/manifest.json';
+    const SW_TPL = 'node_modules/jfa-pwa-toolkit/src/templates/sw.js';
+    const ICONS_ASSETS = 'node_modules/jfa-pwa-toolkit/src/templates/icons/';
+    const SW_ASSETS = 'node_modules/jfa-pwa-toolkit/dist/sw/';
 
     /* Maker */
     makeDir(CONFIG_DIR);
@@ -138,21 +138,30 @@ prompt.get(schema, (err, result) => {
     makeDir(ICONS_DIR);
     copyFolder(ICONS_ASSETS, ICONS_DIR);
 
-    makeDir(SW_DIR);
-    generateFile(SW_ASSETS + 'cache-fonts-sw.js', SW_DIR, 'cache-fonts-sw.js', true);
-    generateFile(SW_ASSETS + 'cache-images-sw.js', SW_DIR, 'cache-images-sw.js', true);
-    generateFile(SW_ASSETS + 'cache-routes-cachefirst-sw.js', SW_DIR, 'cache-routes-cachefirst-sw.js', true);
-    generateFile(SW_ASSETS + 'cache-routes-cacheonly-sw.js', SW_DIR, 'cache-routes-cacheonly-sw.js', true);
-    generateFile(SW_ASSETS + 'cache-routes-networkfirst-sw.js', SW_DIR, 'cache-routes-networkfirst-sw.js', true);
-    generateFile(SW_ASSETS + 'cache-routes-networkonly-sw.js', SW_DIR, 'cache-routes-networkonly-sw.js', true);
-    generateFile(SW_ASSETS + 'cache-routes-stalewhilerevalidate-sw.js', SW_DIR, 'cache-routes-stalewhilerevalidate-sw.js', true);
-    generateFile(SW_ASSETS + 'cache-statics-sw.js', SW_DIR, 'cache-statics-sw.js', true);
-    generateFile(SW_ASSETS + 'notificationclick-sw.js', SW_DIR, 'notificationclick-sw.js', true);
-    generateFile(SW_ASSETS + 'precache-sw.js', SW_DIR, 'precache-sw.js', true);
-    generateFile(SW_ASSETS + 'push-sw.js', SW_DIR, 'push-sw.js', true);
-    generateFile(SW_ASSETS + 'sw.js', SW_DIR, 'sw.js', true);
+    // makeDir(SW_DIR);
+    // generateFile(SW_ASSETS + 'cache-fonts-sw.js', SW_DIR, 'cache-fonts-sw.js', true);
+    // generateFile(SW_ASSETS + 'cache-images-sw.js', SW_DIR, 'cache-images-sw.js', true);
+    // generateFile(SW_ASSETS + 'cache-routes-cachefirst-sw.js', SW_DIR, 'cache-routes-cachefirst-sw.js', true);
+    // generateFile(SW_ASSETS + 'cache-routes-cacheonly-sw.js', SW_DIR, 'cache-routes-cacheonly-sw.js', true);
+    // generateFile(SW_ASSETS + 'cache-routes-networkfirst-sw.js', SW_DIR, 'cache-routes-networkfirst-sw.js', true);
+    // generateFile(SW_ASSETS + 'cache-routes-networkonly-sw.js', SW_DIR, 'cache-routes-networkonly-sw.js', true);
+    // generateFile(SW_ASSETS + 'cache-routes-stalewhilerevalidate-sw.js', SW_DIR, 'cache-routes-stalewhilerevalidate-sw.js', true);
+    // generateFile(SW_ASSETS + 'cache-statics-sw.js', SW_DIR, 'cache-statics-sw.js', true);
+    // generateFile(SW_ASSETS + 'notificationclick-sw.js', SW_DIR, 'notificationclick-sw.js', true);
+    // generateFile(SW_ASSETS + 'precache-sw.js', SW_DIR, 'precache-sw.js', true);
+    // generateFile(SW_ASSETS + 'push-sw.js', SW_DIR, 'push-sw.js', true);
+    // generateFile(SW_ASSETS + 'sw.js', SW_DIR, 'sw.js', true);
 });
 
+/**
+ * Generate file
+ * @param  {string}  templatePath Path of a template
+ * @param  {string}  outputPath   Output path
+ * @param  {string}  filename     File name
+ * @param  {boolean} transform    If babel transfom content
+ * @param  {array}   fields       Fields to change in template
+ * @return {boolean}              Success
+ */
 const generateFile = (templatePath, outputPath, filename, transform, fields) => {
     var template = fs.readFileSync(templatePath, 'utf8');
     if (fields) {
@@ -179,6 +188,10 @@ const generateFile = (templatePath, outputPath, filename, transform, fields) => 
     });
 };
 
+/**
+ * Copy directory
+ * @param  {string} dirPath Path of a directory to copy
+ */
 const copyFolder = (fromPath, toPath) => {
     ncp(fromPath, '.' + toPath, err => {
         if (err) {
@@ -189,8 +202,8 @@ const copyFolder = (fromPath, toPath) => {
 };
 
 /**
- * Copy directory
- * @param  {string} dirPath Path of a directory to copy
+ * Make directory
+ * @param  {string} dirPath Path of a directory to make
  */
 const makeDir = (dirPath) => {
     if (dirPath !== '/') {

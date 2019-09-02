@@ -1,0 +1,1 @@
+"use strict";self.addEventListener("notificationclick",function(a){var b=a.notification,c=b.data.primaryKey,d=a.action;"close"===d?b.close():(clients.openWindow(b.data.clickUrl),b.close())});

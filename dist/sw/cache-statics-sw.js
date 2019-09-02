@@ -1,0 +1,1 @@
+"use strict";workbox.routing.registerRoute(/\.(?:js|json|css)$/,workbox.strategies.staleWhileRevalidate({cacheName:PWA_CONFIG.app.name+"-statics-cache-"+PWA_CONFIG.app.version}));

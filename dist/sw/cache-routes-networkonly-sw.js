@@ -1,0 +1,1 @@
+"use strict";workbox.routing.registerRoute(PWA_CONFIG.cache.routes.networkonly.regex,function(a){var b=a.event;return workbox.strategies.networkOnly().handle({event:b}).then(function(a){return a||caches.match(PWA_CONFIG.sw.offline_route)})["catch"](function(){return caches.match(PWA_CONFIG.sw.offline_route)})});

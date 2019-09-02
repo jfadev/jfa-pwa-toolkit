@@ -9,10 +9,14 @@
   "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
     "babel-preset-minify": "^0.5.1",
+    "copy-webpack-plugin": "^5.0.4",
     "ncp": "^2.0.0",
     "prompt": "^1.0.0",
-    "webpack": "^4.38.0"
+    "terser-webpack-plugin-legacy": "^1.2.3",
+    "webpack": "^4.38.0",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.6"
@@ -20,8 +24,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "make": "node src/maker/index.js make",
-    "postinstall": "node src/maker/index.js make"
+    "make": "node dist/maker",
+    "postinstall": "node dist/maker"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,1 @@
+"use strict";workbox.routing.registerRoute(/.*\.(?:png|jpg|jpeg|svg|gif)/,workbox.strategies.cacheFirst({cacheName:PWA_CONFIG.app.name+"-images-cache-"+PWA_CONFIG.app.version,plugins:[new workbox.cacheableResponse.Plugin({statuses:[0,200]}),new workbox.expiration.Plugin({maxEntries:PWA_CONFIG.cache.images.maxentries,maxAgeSeconds:PWA_CONFIG.cache.images.maxageseconds})]}));
